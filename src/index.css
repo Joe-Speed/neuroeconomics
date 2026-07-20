@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #0b0d12;
+  color: #e8eaf0;
+}
+
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.app-layout canvas {
+  touch-action: none;
+}
+
+.region-panel {
+  width: 320px;
+  flex-shrink: 0;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background: #12141c;
+  border-left: 1px solid #232634;
+}
+
+.region-panel h1 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: #9fb4ff;
+}
+
+.region-list {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.region-button {
+  background: #1c1f2b;
+  color: #e8eaf0;
+  border: 1px solid #2b2f3d;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.region-button.selected {
+  background: #38bdf8;
+  border-color: #38bdf8;
+  color: #0b0d12;
+}
+
+.region-detail h2 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.region-detail p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #c3c8d6;
+}
+
+.region-label {
+  padding: 0.15rem 0.5rem;
+  background: rgba(11, 13, 18, 0.85);
+  border: 1px solid #38bdf8;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  color: #e8eaf0;
+  pointer-events: none;
+}
