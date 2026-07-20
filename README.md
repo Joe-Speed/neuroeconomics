@@ -10,8 +10,6 @@ and surface the papers behind them.
 > [Roadmap](#roadmap) for the plan to swap in an anatomically
 > segmented mesh.
 
-![Screenshot: vmPFC region selected, showing its highlighted marker and role description](docs/screenshot.png)
-
 ## What it does
 
 - Click a region in the sidebar (vmPFC, OFC, DLPFC, TPJ, SMA, VTA,
