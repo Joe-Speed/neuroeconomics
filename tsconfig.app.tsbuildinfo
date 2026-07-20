@@ -1,1 +1,0 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/brainmesh.tsx","./src/components/brainscene.tsx","./src/components/regionmarker.tsx","./src/components/regionmarkers.tsx","./src/components/regionpanel.tsx","./src/lib/mnitolocal.ts","./src/lib/regions.ts"],"version":"5.9.3"}
