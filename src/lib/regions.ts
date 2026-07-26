@@ -10,7 +10,10 @@ export type RegionId =
   | "NAcc"
   | "Caudate"
   | "Insula"
-  | "Amygdala";
+  | "Amygdala"
+  | "Habenula"
+  | "Putamen"
+  | "Hippocampus";
 
 export interface RegionPaperRef {
   /** Key into PAPERS in lib/papers.ts. */
@@ -292,6 +295,75 @@ export const REGIONS: readonly Region[] = [
         paperId: "olsson2007",
         relevance:
           "Demonstrated amygdala involvement in socially acquired aversive values — mechanisms that can shape trust, risk, and norm-sensitive choices.",
+      },
+    ],
+  },
+  {
+    id: "Habenula",
+    name: "Habenula",
+    role: "Small epithalamic structure that encodes the expected badness of an outcome and inhibits midbrain dopamine neurons in response — the mirror image of VTA's positive reward-prediction-error signal. In neuroeconomics, it provides the 'disappointment' half of the teaching signal that updates learned values: dopamine bursts for better-than-expected outcomes, habenula-driven dips for worse-than-expected ones.",
+    mniCoords: [0, -24, 8],
+    papers: [
+      {
+        paperId: "matsumoto2007",
+        relevance:
+          "Primate recordings showed lateral habenula neurons fire more for worse-than-expected outcomes, then inhibit VTA dopamine neurons — identifying the habenula as the source of the negative half of the dopaminergic reward-prediction-error signal.",
+      },
+      {
+        paperId: "matsumoto2009",
+        relevance:
+          "Follow-up recordings showed habenula neurons encode the expected badness of an outcome directly, not just an error signal — evidence it computes negative value rather than merely relaying it.",
+      },
+      {
+        paperId: "hikosaka2010",
+        relevance:
+          "Review framing the habenula explicitly as a value-based decision-making structure, tying its aversive-prediction role to choice behaviour more broadly.",
+      },
+    ],
+  },
+  {
+    id: "Putamen",
+    name: "Putamen (Dorsal Striatum)",
+    role: "Part of the dorsal striatum, alongside the caudate, but specialised for habit-based rather than goal-directed value: it drives stimulus-response associations learned through repetition, competing with vmPFC/OFC's more flexible, outcome-sensitive valuation. In neuroeconomics, the putamen is the substrate for the 'habit' side of the classic habit-versus-goal-directed dual-system account of choice.",
+    mniCoords: [28, 8, 4],
+    papers: [
+      {
+        paperId: "odoherty2004",
+        relevance:
+          "Landmark dissociation showing ventral striatum (NAcc) tracks reward prediction error while dorsal striatum — caudate and putamen — tracks the action-contingent value that drives instrumental choice.",
+      },
+      {
+        paperId: "balleine2007",
+        relevance:
+          "Review specifically framing the dorsal striatum's contribution to reward-based decision-making as distinct from the ventral striatum's, with the putamen implicated in the more automatic, action-value side of that split.",
+      },
+      {
+        paperId: "tricomi2009",
+        relevance:
+          "Directly implicates the posterior dorsolateral striatum — anatomically the putamen — in human habit learning, the stimulus-response value system that competes with goal-directed valuation.",
+      },
+    ],
+  },
+  {
+    id: "Hippocampus",
+    name: "Hippocampus",
+    role: "Best known for episodic memory, in neuroeconomics it supports the deliberative, model-based side of valuation: retrieving and recombining memories of past outcomes to simulate and compare options, rather than relying on cached, habit-like values. It also transfers value between associated items via memory, biasing preference even for options never directly rewarded.",
+    mniCoords: [28, -20, -14],
+    papers: [
+      {
+        paperId: "wimmer2012",
+        relevance:
+          "Shows hippocampal memory associations transfer value between items that were never directly rewarded — memory mechanisms directly biasing economic preference.",
+      },
+      {
+        paperId: "bornstein2013",
+        relevance:
+          "Ties hippocampal activity to model-based (as opposed to habitual, model-free) valuation — the deliberative half of the dual-system decision-making framework.",
+      },
+      {
+        paperId: "bakkour2019",
+        relevance:
+          "Tests a causal-style link between hippocampal function and deliberation time during value-based choice, using amnesic patients as a natural lesion comparison.",
       },
     ],
   },

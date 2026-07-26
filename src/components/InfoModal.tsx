@@ -13,11 +13,12 @@ export function InfoModal({ isOpen, onClose }: InfoModalProps) {
       <div className="info-modal" onClick={(event) => event.stopPropagation()}>
         <h2 className="panel-heading">About this atlas</h2>
         <p>
-          This atlas covers the 12 brain regions most central to neuroeconomics — the study of
+          This atlas covers the brain regions most central to neuroeconomics — the study of
           value, reward, and choice in the brain. They&apos;re the regions that recur across the
           field&apos;s foundational papers on valuation (vmPFC, OFC), cognitive control (DLPFC,
-          SMA), reward learning (VTA, NAcc, Caudate), and social/risk-related choice (ACC, PCC,
-          Insula, Amygdala, TPJ).
+          SMA), reward learning (VTA, NAcc, Caudate, Putamen, Habenula), memory-based valuation
+          (Hippocampus), and social/risk-related choice (ACC, PCC, Insula, Amygdala, TPJ). More
+          get added as the evidence for a region&apos;s role solidifies.
         </p>
         <p>
           It deliberately leaves out regions that show up in economics-adjacent research more

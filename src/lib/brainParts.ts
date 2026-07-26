@@ -48,7 +48,13 @@ const FUNCTIONAL_REGION_PART_IDS: Partial<Record<RegionId, readonly string[]>> =
   // to prevent from coming back.
   SMA: ["FMA72653", "FMA72654"],
   VTA: ["FMA61993nsn", "FMA62394"], // midbrain + its peduncle — both genuinely midbrain, unclaimed elsewhere
-  // Ventral striatum is anatomically continuous with both — not just putamen.
+  // No dedicated accumbens piece exists in this dataset — ventral striatum is
+  // anatomically continuous with both dorsal structures, so this deliberately
+  // overlaps with Caudate's and Putamen's own anatomical territory. Unlike
+  // the earlier vmPFC/SMA mistake, this overlap reflects real anatomy (NAcc
+  // has no boundary distinct from the rest of the striatum) and is disclosed
+  // via the "not a distinct physical boundary" note shown for every
+  // functional (non-anatomical) region.
   NAcc: ["FMA72828", "FMA72829", "FMA72826", "FMA72827"],
 };
 

@@ -1,15 +1,20 @@
 # Neuroeconomics — Interactive 3D Brain
 
+**Live site: [joe-speed.github.io/neuroeconomics](https://joe-speed.github.io/neuroeconomics/)**
+
 An interactive 3D atlas of the brain regions studied in neuroeconomics —
 the field applying neuroscience to decision-making, value, and choice.
 Click a region to see it highlighted on a real segmented anatomical mesh,
 read its role, and follow every cited paper straight to its DOI.
 
+![Screenshot of the app showing the vmPFC highlighted on the segmented brain mesh, with its role text and cited papers in the sidebar](docs/screenshot.webp)
+
 ## What it does
 
-- Twelve regions central to neuroeconomics (vmPFC, OFC, DLPFC, TPJ, SMA,
-  VTA, ACC, PCC, NAcc, Caudate, Insula, Amygdala) — click one in the
-  sidebar, or click/hover its highlighted piece directly on the brain.
+- Regions central to neuroeconomics (vmPFC, OFC, DLPFC, TPJ, SMA, VTA,
+  ACC, PCC, NAcc, Caudate, Insula, Amygdala, and more added over time)
+  — click one in the sidebar, or click/hover its highlighted piece
+  directly on the brain.
 - The camera flies to whatever you select and ghosts the rest of the
   brain so the target stands out.
 - **Explode view** — breaks all 76 segmented anatomical pieces apart
@@ -72,16 +77,16 @@ Done this pass:
 - ✅ Light/dark theme
 - ✅ Every paper linked to a verified DOI; books/reviews linked to a
   stable catalogue page
+- ✅ Habenula, Putamen, and Hippocampus added as real anatomical regions
 
 Still open:
 
-- Putamen and globus pallidus are already separate pieces in the mesh
-  but not yet mapped to a region — a "basal ganglia loop" region would
-  be free to add.
+- Globus pallidus is already a separate piece in the mesh but not yet
+  mapped to a region — a "basal ganglia loop" region would be free to add.
 - A circuit view: selecting a region could also glow the other regions
   the cited papers describe it as functionally connected to (e.g. the
   VTA → NAcc → vmPFC reward pathway).
-- A guided "tour" mode that auto-cycles through all 12 regions.
+- A guided "tour" mode that auto-cycles through every region.
 
 ## License
 

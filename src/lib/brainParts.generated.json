@@ -92,7 +92,7 @@
   {
     "nodeName": "FMA62032",
     "englishName": "habenula",
-    "regionId": null,
+    "regionId": "Habenula",
     "centroid": [
       -0.0034,
       0.09731,
@@ -372,7 +372,7 @@
   {
     "nodeName": "FMA72713",
     "englishName": "right hippocampus",
-    "regionId": null,
+    "regionId": "Hippocampus",
     "centroid": [
       -0.52335,
       -0.13038,
@@ -382,7 +382,7 @@
   {
     "nodeName": "FMA72714",
     "englishName": "left hippocampus",
-    "regionId": null,
+    "regionId": "Hippocampus",
     "centroid": [
       0.52013,
       -0.1157,
@@ -492,7 +492,7 @@
   {
     "nodeName": "FMA72828",
     "englishName": "right putamen",
-    "regionId": null,
+    "regionId": "Putamen",
     "centroid": [
       -0.5127,
       -0.4155,
@@ -502,7 +502,7 @@
   {
     "nodeName": "FMA72829",
     "englishName": "left putamen",
-    "regionId": null,
+    "regionId": "Putamen",
     "centroid": [
       0.50645,
       -0.41842,

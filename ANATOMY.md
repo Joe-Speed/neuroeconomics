@@ -4,9 +4,9 @@
 mesh pieces**, built from the [BodyParts3D](http://lifesciencedb.jp/bp3d/)
 dataset (CC BY-SA 2.1 Japan). Every piece can be exploded independently and
 inspected by name — this file lists what they are and which ones the app's
-12 neuroeconomics regions map to.
+neuroeconomics regions map to.
 
-## The 12 neuroeconomics regions
+## The neuroeconomics regions
 
 Defined in [`src/lib/regions.ts`](src/lib/regions.ts), sourced from
 [`neuroeconomics-research.md`](neuroeconomics-research.md).
@@ -25,6 +25,9 @@ Defined in [`src/lib/regions.ts`](src/lib/regions.ts), sourced from
 | Caudate | Caudate Nucleus (Dorsal Striatum) | **Yes** | `FMA72826`, `FMA72827` |
 | Insula | Anterior Insula | **Yes** | `FMA72977`, `FMA72978` |
 | Amygdala | Amygdala | **Yes** | `FMA72832`, `FMA72833` |
+| Habenula | Habenula | **Yes** | `FMA62032` — single node; the real structure is bilateral but BodyParts3D models it as one piece |
+| Putamen | Putamen (Dorsal Striatum) | **Yes** | `FMA72828`, `FMA72829` |
+| Hippocampus | Hippocampus | **Yes** | `FMA72713`, `FMA72714` |
 
 These seven have no distinct physical boundary in any atlas — they're
 defined by function or cytoarchitecture, not visible anatomy. The mapping
@@ -81,21 +84,24 @@ orbital gyri + straight gyrus → **vmPFC** and **OFC**
 right/left accessory short gyrus (insula-adjacent)
 
 **Limbic / medial temporal**
-right/left amygdala → **Amygdala**, right/left hippocampus,
+right/left amygdala → **Amygdala**, right/left hippocampus → **Hippocampus**,
 right/left parahippocampal gyrus (listed above), septum pellucidum
 
 **Basal ganglia**
-right/left caudate nucleus → **Caudate**, right/left putamen,
+right/left caudate nucleus → **Caudate**, right/left putamen → **Putamen**,
 right/left globus pallidus
 
-*(Putamen is now part of the NAcc mapping above. Globus pallidus is still
-unmapped — it's a real, separate, exploded piece, but the research notes
-don't cover it individually; if you want a "basal ganglia loop" region
+*(Putamen is also part of the NAcc mapping above — ventral striatum is
+anatomically continuous with it, and this overlap is disclosed to the user
+rather than hidden; see the NAcc comment in `brainParts.ts`. Globus pallidus
+is still unmapped — it's a real, separate, exploded piece, but the research
+notes don't cover it individually; if you want a "basal ganglia loop" region
 added, it's ready to map in.)*
 
 **Diencephalon**
-right/left thalamus, hypothalamus, tuber cinereum, habenula, pineal body,
-right/left lateral geniculate body, right/left medial geniculate body
+right/left thalamus, hypothalamus, tuber cinereum, habenula → **Habenula**,
+pineal body, right/left lateral geniculate body, right/left medial
+geniculate body
 
 **Brainstem**
 midbrain, peduncle of midbrain, pons, medulla oblongata,
@@ -132,14 +138,14 @@ cerebral aqueduct
    - exports one glTF (`assets/source/brain-segmented.glb`) with all 76
      pieces as separately named nodes, plus
      **`src/lib/brainParts.generated.json`** — one entry per piece
-     (`nodeName`, `englishName`, `regionId` if it's one of the 5 true
+     (`nodeName`, `englishName`, `regionId` if it's one of the true
      anatomical regions, and its `centroid` in scene units).
    - `gltf-transform draco` then Draco-compresses the result into
      `public/brain.glb` (this step only compresses — it does not merge
      nodes back together, which would break per-piece explode/highlight).
 4. **`src/lib/brainParts.ts`** — loads that generated JSON. `regionId` on a
-   part covers the 5 true anatomical regions; `FUNCTIONAL_REGION_PART_IDS`
-   is the hand-curated table covering the other 7. `nodeNamesForRegion(id)`
+   part covers the true anatomical regions; `FUNCTIONAL_REGION_PART_IDS`
+   is the hand-curated table covering the rest. `nodeNamesForRegion(id)`
    is the single lookup both highlighting and the camera use — it doesn't
    care whether the region is "real" anatomy or a curated approximation, it
    just returns which mesh node name(s) belong to that region.

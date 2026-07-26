@@ -34,6 +34,11 @@ REGION_BY_PART_ID = {
     "FMA72978": "Insula",
     "FMA72826": "Caudate",
     "FMA72827": "Caudate",
+    "FMA62032": "Habenula",
+    "FMA72828": "Putamen",
+    "FMA72829": "Putamen",
+    "FMA72713": "Hippocampus",
+    "FMA72714": "Hippocampus",
 }
 
 # Cingulate gyrus (FMA72717 right, FMA72718 left) has no separate ACC/PCC

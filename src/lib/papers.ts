@@ -142,4 +142,49 @@ export const PAPERS: Record<string, Paper> = {
     citation: "Olsson, A., & Phelps, E. A. (2007). Social learning of fear. Nature Neuroscience, 10(9), 1095–1102.",
     doi: "10.1038/nn1968",
   },
+  matsumoto2007: {
+    citation:
+      "Matsumoto, M., & Hikosaka, O. (2007). Lateral habenula as a source of negative reward signals in dopamine neurons. Nature, 447(7148), 1111–1115.",
+    doi: "10.1038/nature05860",
+  },
+  matsumoto2009: {
+    citation:
+      "Matsumoto, M., & Hikosaka, O. (2009). Representation of negative motivational value in the primate lateral habenula. Nature Neuroscience, 12(1), 77–84.",
+    doi: "10.1038/nn.2233",
+  },
+  hikosaka2010: {
+    citation:
+      "Hikosaka, O. (2010). The habenula: from stress evasion to value-based decision-making. Nature Reviews Neuroscience, 11(7), 503–513.",
+    doi: "10.1038/nrn2866",
+  },
+  odoherty2004: {
+    citation:
+      "O'Doherty, J., Dayan, P., Schultz, J., Deichmann, R., Friston, K., & Dolan, R. J. (2004). Dissociable roles of ventral and dorsal striatum in instrumental conditioning. Science, 304(5669), 452–454.",
+    doi: "10.1126/science.1094285",
+  },
+  balleine2007: {
+    citation:
+      "Balleine, B. W., Delgado, M. R., & Hikosaka, O. (2007). The role of the dorsal striatum in reward and decision-making. Journal of Neuroscience, 27(31), 8161–8165.",
+    doi: "10.1523/jneurosci.1554-07.2007",
+  },
+  tricomi2009: {
+    citation:
+      "Tricomi, E., Balleine, B. W., & O'Doherty, J. P. (2009). A specific role for posterior dorsolateral striatum in human habit learning. European Journal of Neuroscience, 29(11), 2225–2232.",
+    doi: "10.1111/j.1460-9568.2009.06796.x",
+  },
+  wimmer2012: {
+    citation:
+      "Wimmer, G. E., & Shohamy, D. (2012). Preference by association: how memory mechanisms in the hippocampus bias decisions. Science, 338(6104), 270–273.",
+    doi: "10.1126/science.1223252",
+  },
+  bornstein2013: {
+    citation:
+      "Bornstein, A. M., & Daw, N. D. (2013). Cortical and hippocampal correlates of deliberation during model-based decisions for rewards in humans. PLOS Computational Biology, 9(12), e1003387.",
+    doi: "10.1371/journal.pcbi.1003387",
+  },
+  bakkour2019: {
+    citation:
+      "Bakkour, A., Palombo, D. J., Zylberberg, A., Kang, Y. H., Reid, A., Verfaellie, M., Shadlen, M. N., & Shohamy, D. (2019). The hippocampus supports deliberation during value-based decisions. eLife, 8, e46080.",
+    doi: "10.7554/elife.46080",
+  },
 };
