@@ -6,7 +6,7 @@ export function AboutPanel() {
 
   return (
     <div className="about-panel">
-      <h2>What is neuroeconomics?</h2>
+      <h2 className="panel-heading">What is neuroeconomics?</h2>
       <p>{NEUROECONOMICS_INTRO}</p>
       <p className="about-hint">Select a region above, or click a highlighted part of the brain, to explore it.</p>
 
@@ -53,6 +53,20 @@ export function AboutPanel() {
         <li>
           <a href={SOCIETY_FOR_NEUROECONOMICS_URL} target="_blank" rel="noopener noreferrer">
             Society for Neuroeconomics ↗
+          </a>
+        </li>
+      </ul>
+
+      <h3>Associated sites</h3>
+      <ul className="resource-links">
+        <li>
+          <a href="https://www.behaviouralatlas.com/" target="_blank" rel="noopener noreferrer">
+            Behavioural Atlas ↗
+          </a>
+        </li>
+        <li>
+          <a href="https://www.behaviouralengines.com/" target="_blank" rel="noopener noreferrer">
+            Behavioural Engines ↗
           </a>
         </li>
       </ul>

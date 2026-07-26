@@ -1,7 +1,7 @@
 import rawParts from "./brainParts.generated.json";
 import type { RegionId } from "./regions";
 
-export interface BrainPart {
+interface BrainPart {
   nodeName: string;
   englishName: string;
   regionId: RegionId | null;

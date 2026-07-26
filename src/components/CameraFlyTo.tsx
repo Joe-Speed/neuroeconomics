@@ -62,12 +62,21 @@ export function CameraFlyTo({ selectedRegionId, controlsRef }: CameraFlyToProps)
 
     const lerpFactor = Math.min(delta * LERP_SPEED, 1);
     camera.position.lerp(cameraGoal, lerpFactor);
+    // Aim manually instead of via controls.update() while flying: the
+    // opening shot starts well outside OrbitControls' configured
+    // maxDistance (that's the whole "from a distance" effect), and
+    // update() clamps camera.position to maxDistance on every call — it
+    // would snap the shot back to resting distance on the very first
+    // frame instead of letting it fly in.
+    camera.lookAt(targetGoal);
 
     const controls = controlsRef.current;
-    if (controls) {
-      controls.target.lerp(targetGoal, lerpFactor);
-      controls.update();
-    }
+    if (!controls) return;
+    controls.target.lerp(targetGoal, lerpFactor);
+
+    // One real sync at touchdown so OrbitControls' internal state matches
+    // reality before the user's first manual drag/zoom.
+    if (flightElapsedRef.current >= FLIGHT_DURATION_SECONDS) controls.update();
   });
 
   return null;

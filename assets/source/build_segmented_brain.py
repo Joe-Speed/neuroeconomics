@@ -1,14 +1,18 @@
 import glob
 import json
 import os
+from pathlib import Path
 
 import numpy as np
 import trimesh
 
-PART_DIR = "/Users/joespeed/Code-Projects/neuroeconomics/assets/source/brain_parts"
-PARTS_LIST_PATH = "/tmp/parts_list_e.txt"
-OUT_GLB = "/Users/joespeed/Code-Projects/neuroeconomics/assets/source/brain-segmented.glb"
-OUT_METADATA = "/Users/joespeed/Code-Projects/neuroeconomics/src/lib/brainParts.generated.json"
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent.parent
+
+PART_DIR = SCRIPT_DIR / "brain_parts"
+PARTS_LIST_PATH = SCRIPT_DIR / "bodyparts3d_parts_list_e.txt"
+OUT_GLB = SCRIPT_DIR / "brain-segmented.glb"
+OUT_METADATA = REPO_ROOT / "src" / "lib" / "brainParts.generated.json"
 SCALE = 0.02
 
 

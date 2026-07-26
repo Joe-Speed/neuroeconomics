@@ -304,12 +304,12 @@ export function getRegionById(regionId: RegionId | null): Region | undefined {
 export const NEUROECONOMICS_INTRO =
   "Neuroeconomics is an interdisciplinary field that combines neuroscience, psychology, and economics to study decision-making. It explores brain regions involved in value computation, reward processing, and choice behaviour. Key areas include the vmPFC (valuation), dlPFC (cognitive control), and striatum (reward learning). Understanding the field helps explain irrational behaviour, biases, and preferences.";
 
-export interface RecommendedRead {
+interface RecommendedRead {
   title: string;
   author: string;
   year: number;
   category: "book" | "academic";
-  /** Publisher, DOI resolver, or other stable catalog page — null until verified. */
+  /** Publisher, DOI resolver, or other stable catalogue page — null until verified. */
   url: string | null;
 }
 

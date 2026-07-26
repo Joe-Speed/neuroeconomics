@@ -55,7 +55,11 @@ export function BrainScene({ selectedRegionId, onSelectRegion, theme }: BrainSce
           {isExploded ? "Reassemble" : "Explode view"}
         </button>
         <Canvas
-          camera={{ position: [0, 4, 4.5], fov: 45 }}
+          // Starts well beyond the resting position (0, 4, 4.5) — CameraFlyTo
+          // treats "no region selected" as a flight home to that resting
+          // spot, so starting out here gives a one-time "approaching from a
+          // distance" opening shot for free, no separate intro animation.
+          camera={{ position: [0, 9, 10], fov: 45 }}
           onPointerMissed={() => onSelectRegion(null)}
         >
           <color attach="background" args={[CANVAS_BACKGROUND[theme]]} />

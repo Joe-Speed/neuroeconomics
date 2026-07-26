@@ -1,4 +1,4 @@
-export interface Paper {
+interface Paper {
   citation: string;
   /** Digital Object Identifier, verified against Crossref. Link is derived, never stored separately. */
   doi: string | null;

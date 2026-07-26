@@ -12,7 +12,7 @@ export function RegionDetail({ region }: RegionDetailProps) {
 
   return (
     <div className="region-detail">
-      <h2>{region.name}</h2>
+      <h2 className="panel-heading">{region.name}</h2>
       {!isAnatomical && hasMappedPiece && (
         <p className="region-approx-note">
           Highlighted on its nearest established anatomical correlate — {region.name} is defined by

@@ -1,13 +1,8 @@
-import { SOCIETY_FOR_NEUROECONOMICS_URL } from "../lib/regions";
-import { ThemeToggle } from "./ThemeToggle";
-import type { Theme } from "../lib/useTheme";
+import { FaGithub } from "react-icons/fa6";
 
-interface AppHeaderProps {
-  theme: Theme;
-  onToggleTheme: () => void;
-}
+const GITHUB_REPO_URL = "https://github.com/Joe-Speed/neuroeconomics";
 
-export function AppHeader({ theme, onToggleTheme }: AppHeaderProps) {
+export function AppHeader() {
   return (
     <header className="app-header">
       <div className="app-header-title">
@@ -17,12 +12,9 @@ export function AppHeader({ theme, onToggleTheme }: AppHeaderProps) {
           <p>An interactive atlas of the decision-making brain</p>
         </div>
       </div>
-      <div className="app-header-actions">
-        <a href={SOCIETY_FOR_NEUROECONOMICS_URL} target="_blank" rel="noopener noreferrer">
-          Society for Neuroeconomics ↗
-        </a>
-        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-      </div>
+      <a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub">
+        <FaGithub size={22} />
+      </a>
     </header>
   );
 }

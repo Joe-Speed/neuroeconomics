@@ -8,3 +8,4 @@ dist
 # app. The one output that matters, public/brain.glb, is not ignored.
 assets/source/brain_parts/
 assets/source/*.glb
+assets/source/__pycache__/

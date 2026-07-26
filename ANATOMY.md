@@ -124,7 +124,7 @@ cerebral aqueduct
    - loads the 74 raw BodyParts3D OBJ files (already downloaded into
      `assets/source/brain_parts/`),
    - splits the two cingulate gyrus pieces into anterior/posterior halves,
-   - centers and scales everything into one shared coordinate frame,
+   - centres and scales everything into one shared coordinate frame,
    - runs `trimesh.repair.fix_normals` (this is what makes the surface read
      as a real folded brain instead of a flat blob — normals must be
      exported explicitly or every piece renders featureless),
@@ -165,7 +165,7 @@ App                          — owns selectedRegionId + theme state
 
 `BrainMesh` builds a `Map<nodeName, THREE.Mesh>` once when the model loads,
 gives every mesh its own cloned material (critical — sharing one material
-across pieces means highlighting one piece would flip the emissive color for
+across pieces means highlighting one piece would flip the emissive colour for
 literally all of them, which was a real bug earlier in this project), and
 adds a slightly larger, `BackSide`, dark child mesh to each piece for the
 visible outline between regions. On every frame, it looks up
@@ -183,7 +183,7 @@ nudges it toward 0 or 1 every frame (`useFrame`), rather than storing it in
 React state — it changes 60 times a second, and React re-renders are for UI,
 not per-frame transforms. `BrainMesh` reads that ref and sets each piece's
 position to `centroid * (EXPLODE_SCALE - 1) * progress` — every piece moves
-radially outward from the brain's center, proportional to how far out it
+radially outward from the brain's centre, proportional to how far out it
 already sits. `ExplodeThreads` draws one line per piece, from its true
 position to its current exploded position, faded in as `progress` increases.
 
@@ -210,4 +210,4 @@ direction.
 variables (`--bg`, `--surface`, `--fg`, `--border`) in `src/index.css` do the
 rest for the 2D UI. The 3D canvas background isn't a CSS element, so
 `src/lib/sceneColors.ts` holds a matching `CANVAS_BACKGROUND` lookup that
-`BrainScene` applies directly to the `three.js` scene background color.
+`BrainScene` applies directly to the `three.js` scene background colour.

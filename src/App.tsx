@@ -13,14 +13,19 @@ export function App() {
   return (
     <AppLoadGate>
       <div className="app-shell">
-        <AppHeader theme={theme} onToggleTheme={toggleTheme} />
+        <AppHeader />
         <div className="app-layout">
           <BrainScene
             selectedRegionId={selectedRegionId}
             onSelectRegion={setSelectedRegionId}
             theme={theme}
           />
-          <RegionPanel selectedRegionId={selectedRegionId} onSelectRegion={setSelectedRegionId} />
+          <RegionPanel
+            selectedRegionId={selectedRegionId}
+            onSelectRegion={setSelectedRegionId}
+            theme={theme}
+            onToggleTheme={toggleTheme}
+          />
         </div>
       </div>
     </AppLoadGate>

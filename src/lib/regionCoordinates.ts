@@ -8,7 +8,7 @@ const MNI_BOUNDS = {
 } as const;
 
 // Half-extents (scene units) of public/brain.glb — a segmented BodyParts3D
-// mesh, centered on its bounding-box midpoint and scaled at 1mm = 0.02 units.
+// mesh, centred on its bounding-box midpoint and scaled at 1mm = 0.02 units.
 // See assets/source/ for the conversion script. The mesh's native axes are
 // x = left-right, y = anterior(-)/posterior(+), z = superior(+)/inferior(-).
 const SCENE_RADIUS = { x: 1.336, y: 1.702, z: 1.567 } as const;
