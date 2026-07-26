@@ -12,7 +12,7 @@ import {
 import { GLOW_COLOR } from "../lib/sceneColors";
 import { getRegionById, type RegionId } from "../lib/regions";
 
-const BRAIN_MODEL_PATH = "/brain.glb";
+const BRAIN_MODEL_PATH = `${import.meta.env.BASE_URL}brain.glb`;
 const TISSUE_COLOR = "#e0a49a";
 const OUTLINE_COLOR = "#241c1a";
 const OUTLINE_SCALE = 1.015;
