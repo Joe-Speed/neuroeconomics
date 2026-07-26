@@ -1,0 +1,762 @@
+[
+  {
+    "nodeName": "BP49",
+    "englishName": "left superior parietal lobule precuneus",
+    "regionId": null,
+    "centroid": [
+      0.31166,
+      1.01616,
+      0.72728
+    ]
+  },
+  {
+    "nodeName": "BP50",
+    "englishName": "right superior parietal lobule precuneus",
+    "regionId": null,
+    "centroid": [
+      -0.31386,
+      1.01696,
+      0.72763
+    ]
+  },
+  {
+    "nodeName": "BP51",
+    "englishName": "orbital gyri straight gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.00172,
+      -1.11932,
+      0.02724
+    ]
+  },
+  {
+    "nodeName": "FMA258714",
+    "englishName": "right thalamus",
+    "regionId": null,
+    "centroid": [
+      -0.24132,
+      -0.05845,
+      0.13535
+    ]
+  },
+  {
+    "nodeName": "FMA258716",
+    "englishName": "left thalamus",
+    "regionId": null,
+    "centroid": [
+      0.23547,
+      -0.06478,
+      0.14221
+    ]
+  },
+  {
+    "nodeName": "FMA61844",
+    "englishName": "septum pellucidum",
+    "regionId": null,
+    "centroid": [
+      -0.00201,
+      -0.40265,
+      0.39528
+    ]
+  },
+  {
+    "nodeName": "FMA61993nsn",
+    "englishName": "midbrain, nsn",
+    "regionId": null,
+    "centroid": [
+      -0.00035,
+      -0.06339,
+      -0.15467
+    ]
+  },
+  {
+    "nodeName": "FMA62004",
+    "englishName": "medulla oblongata",
+    "regionId": null,
+    "centroid": [
+      0.00146,
+      0.10215,
+      -0.98741
+    ]
+  },
+  {
+    "nodeName": "FMA62008nsn",
+    "englishName": "hypothalamus, nsn",
+    "regionId": null,
+    "centroid": [
+      -0.00245,
+      -0.49752,
+      -0.05755
+    ]
+  },
+  {
+    "nodeName": "FMA62032",
+    "englishName": "habenula",
+    "regionId": null,
+    "centroid": [
+      -0.0034,
+      0.09731,
+      0.01602
+    ]
+  },
+  {
+    "nodeName": "FMA62033",
+    "englishName": "pineal body",
+    "regionId": null,
+    "centroid": [
+      0.00033,
+      0.19493,
+      -0.03357
+    ]
+  },
+  {
+    "nodeName": "FMA62327",
+    "englishName": "tuber cinereum",
+    "regionId": null,
+    "centroid": [
+      -0.00313,
+      -0.44512,
+      -0.11903
+    ]
+  },
+  {
+    "nodeName": "FMA62394",
+    "englishName": "peduncle of midbrain",
+    "regionId": null,
+    "centroid": [
+      -0.00823,
+      -0.2787,
+      -0.15223
+    ]
+  },
+  {
+    "nodeName": "FMA67943",
+    "englishName": "pons",
+    "regionId": null,
+    "centroid": [
+      -0.00277,
+      -0.11413,
+      -0.57052
+    ]
+  },
+  {
+    "nodeName": "FMA67944",
+    "englishName": "cerebellum",
+    "regionId": null,
+    "centroid": [
+      -0.00337,
+      0.57817,
+      -0.63993
+    ]
+  },
+  {
+    "nodeName": "FMA72653",
+    "englishName": "right superior frontal gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.24321,
+      -0.77272,
+      0.9825
+    ]
+  },
+  {
+    "nodeName": "FMA72654",
+    "englishName": "left superior frontal gyrus",
+    "regionId": null,
+    "centroid": [
+      0.24142,
+      -0.76007,
+      0.99131
+    ]
+  },
+  {
+    "nodeName": "FMA72655",
+    "englishName": "right middle frontal gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.59367,
+      -0.84637,
+      0.9121
+    ]
+  },
+  {
+    "nodeName": "FMA72656",
+    "englishName": "left middle frontal gyrus",
+    "regionId": null,
+    "centroid": [
+      0.5903,
+      -0.85705,
+      0.90662
+    ]
+  },
+  {
+    "nodeName": "FMA72661",
+    "englishName": "right precentral gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.62297,
+      0.0691,
+      0.96545
+    ]
+  },
+  {
+    "nodeName": "FMA72662",
+    "englishName": "left precentral gyrus",
+    "regionId": null,
+    "centroid": [
+      0.62722,
+      0.05949,
+      0.95801
+    ]
+  },
+  {
+    "nodeName": "FMA72665",
+    "englishName": "right postcentral gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.67153,
+      0.34888,
+      0.95543
+    ]
+  },
+  {
+    "nodeName": "FMA72666",
+    "englishName": "left postcentral gyrus",
+    "regionId": null,
+    "centroid": [
+      0.66591,
+      0.35204,
+      0.95556
+    ]
+  },
+  {
+    "nodeName": "FMA72667",
+    "englishName": "right supramarginal gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.94348,
+      0.40928,
+      0.64116
+    ]
+  },
+  {
+    "nodeName": "FMA72668",
+    "englishName": "left supramarginal gyrus",
+    "regionId": null,
+    "centroid": [
+      0.93796,
+      0.41175,
+      0.64284
+    ]
+  },
+  {
+    "nodeName": "FMA72669",
+    "englishName": "right angular gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.79019,
+      0.96438,
+      0.45801
+    ]
+  },
+  {
+    "nodeName": "FMA72670",
+    "englishName": "left angular gyrus",
+    "regionId": null,
+    "centroid": [
+      0.78665,
+      0.96143,
+      0.45932
+    ]
+  },
+  {
+    "nodeName": "FMA72685",
+    "englishName": "right middle temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.99328,
+      0.17934,
+      -0.1185
+    ]
+  },
+  {
+    "nodeName": "FMA72686",
+    "englishName": "left middle temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      0.98628,
+      0.18615,
+      -0.12255
+    ]
+  },
+  {
+    "nodeName": "FMA72687",
+    "englishName": "right inferior temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.79603,
+      -0.04115,
+      -0.32723
+    ]
+  },
+  {
+    "nodeName": "FMA72688",
+    "englishName": "left inferior temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      0.80119,
+      -0.03948,
+      -0.3265
+    ]
+  },
+  {
+    "nodeName": "FMA72689",
+    "englishName": "right fusiform gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.55091,
+      -0.10341,
+      -0.32971
+    ]
+  },
+  {
+    "nodeName": "FMA72690",
+    "englishName": "left fusiform gyrus",
+    "regionId": null,
+    "centroid": [
+      0.55112,
+      -0.09528,
+      -0.32988
+    ]
+  },
+  {
+    "nodeName": "FMA72701",
+    "englishName": "right accessory short gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.8182,
+      -0.83762,
+      0.53246
+    ]
+  },
+  {
+    "nodeName": "FMA72702",
+    "englishName": "left accessory short gyrus",
+    "regionId": null,
+    "centroid": [
+      0.81326,
+      -0.84214,
+      0.5294
+    ]
+  },
+  {
+    "nodeName": "FMA72705",
+    "englishName": "right parahippocampal gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.36309,
+      -0.047,
+      -0.26167
+    ]
+  },
+  {
+    "nodeName": "FMA72706",
+    "englishName": "left parahippocampal gyrus",
+    "regionId": null,
+    "centroid": [
+      0.35959,
+      -0.03549,
+      -0.25922
+    ]
+  },
+  {
+    "nodeName": "FMA72713",
+    "englishName": "right hippocampus",
+    "regionId": null,
+    "centroid": [
+      -0.52335,
+      -0.13038,
+      -0.1602
+    ]
+  },
+  {
+    "nodeName": "FMA72714",
+    "englishName": "left hippocampus",
+    "regionId": null,
+    "centroid": [
+      0.52013,
+      -0.1157,
+      -0.15488
+    ]
+  },
+  {
+    "nodeName": "FMA72717_ACC",
+    "englishName": "right cingulate gyrus (anterior half)",
+    "regionId": "ACC",
+    "centroid": [
+      -0.18506,
+      0.4061,
+      0.43901
+    ]
+  },
+  {
+    "nodeName": "FMA72717_PCC",
+    "englishName": "right cingulate gyrus (posterior half)",
+    "regionId": "PCC",
+    "centroid": [
+      -0.12193,
+      -0.8453,
+      0.58044
+    ]
+  },
+  {
+    "nodeName": "FMA72718_ACC",
+    "englishName": "left cingulate gyrus (anterior half)",
+    "regionId": "ACC",
+    "centroid": [
+      0.18302,
+      0.40647,
+      0.42997
+    ]
+  },
+  {
+    "nodeName": "FMA72718_PCC",
+    "englishName": "left cingulate gyrus (posterior half)",
+    "regionId": "PCC",
+    "centroid": [
+      0.11783,
+      -0.84936,
+      0.57461
+    ]
+  },
+  {
+    "nodeName": "FMA72800",
+    "englishName": "anterior part of right superior temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      -0.88106,
+      -0.45178,
+      0.109
+    ]
+  },
+  {
+    "nodeName": "FMA72801",
+    "englishName": "anterior part of left superior temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      0.87721,
+      -0.45704,
+      0.10408
+    ]
+  },
+  {
+    "nodeName": "FMA72804",
+    "englishName": "posterior part of right superior temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      -1.05995,
+      0.31407,
+      0.20372
+    ]
+  },
+  {
+    "nodeName": "FMA72805",
+    "englishName": "posterior part of left superior temporal gyrus",
+    "regionId": null,
+    "centroid": [
+      1.05411,
+      0.31689,
+      0.20555
+    ]
+  },
+  {
+    "nodeName": "FMA72826",
+    "englishName": "right caudate nucleus",
+    "regionId": "Caudate",
+    "centroid": [
+      -0.33377,
+      -0.37312,
+      0.23145
+    ]
+  },
+  {
+    "nodeName": "FMA72827",
+    "englishName": "left caudate nucleus",
+    "regionId": "Caudate",
+    "centroid": [
+      0.32641,
+      -0.36831,
+      0.23486
+    ]
+  },
+  {
+    "nodeName": "FMA72828",
+    "englishName": "right putamen",
+    "regionId": null,
+    "centroid": [
+      -0.5127,
+      -0.4155,
+      0.21962
+    ]
+  },
+  {
+    "nodeName": "FMA72829",
+    "englishName": "left putamen",
+    "regionId": null,
+    "centroid": [
+      0.50645,
+      -0.41842,
+      0.21331
+    ]
+  },
+  {
+    "nodeName": "FMA72830",
+    "englishName": "right globus pallidus",
+    "regionId": null,
+    "centroid": [
+      -0.429,
+      -0.4005,
+      0.16714
+    ]
+  },
+  {
+    "nodeName": "FMA72831",
+    "englishName": "left globus pallidus",
+    "regionId": null,
+    "centroid": [
+      0.41867,
+      -0.4109,
+      0.16073
+    ]
+  },
+  {
+    "nodeName": "FMA72832",
+    "englishName": "right amygdala",
+    "regionId": "Amygdala",
+    "centroid": [
+      -0.48214,
+      -0.49633,
+      -0.1425
+    ]
+  },
+  {
+    "nodeName": "FMA72833",
+    "englishName": "left amygdala",
+    "regionId": "Amygdala",
+    "centroid": [
+      0.48239,
+      -0.49133,
+      -0.14709
+    ]
+  },
+  {
+    "nodeName": "FMA72975",
+    "englishName": "right occipital lobe",
+    "regionId": null,
+    "centroid": [
+      -0.34742,
+      1.12322,
+      -0.10287
+    ]
+  },
+  {
+    "nodeName": "FMA72976",
+    "englishName": "left occipital lobe",
+    "regionId": null,
+    "centroid": [
+      0.34366,
+      1.12319,
+      -0.10204
+    ]
+  },
+  {
+    "nodeName": "FMA72977",
+    "englishName": "right insula",
+    "regionId": "Insula",
+    "centroid": [
+      -0.68553,
+      -0.46152,
+      0.33964
+    ]
+  },
+  {
+    "nodeName": "FMA72978",
+    "englishName": "left insula",
+    "regionId": "Insula",
+    "centroid": [
+      0.68151,
+      -0.46812,
+      0.34184
+    ]
+  },
+  {
+    "nodeName": "FMA73303",
+    "englishName": "right lateral geniculate body",
+    "regionId": null,
+    "centroid": [
+      -0.37262,
+      0.01787,
+      -0.10788
+    ]
+  },
+  {
+    "nodeName": "FMA73304",
+    "englishName": "left lateral geniculate body",
+    "regionId": null,
+    "centroid": [
+      0.40384,
+      -0.00938,
+      -0.1098
+    ]
+  },
+  {
+    "nodeName": "FMA73309",
+    "englishName": "right medial geniculate body",
+    "regionId": null,
+    "centroid": [
+      -0.27907,
+      0.00136,
+      -0.11125
+    ]
+  },
+  {
+    "nodeName": "FMA73310",
+    "englishName": "left medial geniculate body",
+    "regionId": null,
+    "centroid": [
+      0.28493,
+      -0.00198,
+      -0.10797
+    ]
+  },
+  {
+    "nodeName": "FMA73422",
+    "englishName": "right superior colliculus",
+    "regionId": null,
+    "centroid": [
+      -0.07643,
+      0.06968,
+      -0.10536
+    ]
+  },
+  {
+    "nodeName": "FMA73423",
+    "englishName": "left superior colliculus",
+    "regionId": null,
+    "centroid": [
+      0.08415,
+      0.06195,
+      -0.09837
+    ]
+  },
+  {
+    "nodeName": "FMA73434",
+    "englishName": "right inferior colliculus",
+    "regionId": null,
+    "centroid": [
+      -0.08174,
+      0.06615,
+      -0.24311
+    ]
+  },
+  {
+    "nodeName": "FMA73435",
+    "englishName": "left inferior colliculus",
+    "regionId": null,
+    "centroid": [
+      0.07734,
+      0.0692,
+      -0.24929
+    ]
+  },
+  {
+    "nodeName": "FMA73461",
+    "englishName": "brachium of right superior colliculus",
+    "regionId": null,
+    "centroid": [
+      0.16156,
+      0.07618,
+      -0.09059
+    ]
+  },
+  {
+    "nodeName": "FMA73462",
+    "englishName": "brachium of left superior colliculus",
+    "regionId": null,
+    "centroid": [
+      -0.17097,
+      0.07695,
+      -0.09393
+    ]
+  },
+  {
+    "nodeName": "FMA73463",
+    "englishName": "brachium of right inferior colliculus",
+    "regionId": null,
+    "centroid": [
+      -0.16724,
+      0.05558,
+      -0.15643
+    ]
+  },
+  {
+    "nodeName": "FMA73464",
+    "englishName": "brachium of left inferior colliculus",
+    "regionId": null,
+    "centroid": [
+      0.16592,
+      0.05266,
+      -0.15231
+    ]
+  },
+  {
+    "nodeName": "FMA78449",
+    "englishName": "right lateral ventricle",
+    "regionId": null,
+    "centroid": [
+      -0.34168,
+      -0.15045,
+      0.16699
+    ]
+  },
+  {
+    "nodeName": "FMA78450",
+    "englishName": "left lateral ventricle",
+    "regionId": null,
+    "centroid": [
+      0.34269,
+      -0.13056,
+      0.16375
+    ]
+  },
+  {
+    "nodeName": "FMA78454",
+    "englishName": "third ventricle",
+    "regionId": null,
+    "centroid": [
+      -0.0013,
+      -0.23949,
+      0.09728
+    ]
+  },
+  {
+    "nodeName": "FMA78467",
+    "englishName": "cerebral aqueduct",
+    "regionId": null,
+    "centroid": [
+      -0.00021,
+      -0.01274,
+      -0.13657
+    ]
+  },
+  {
+    "nodeName": "FMA78469",
+    "englishName": "fourth ventricle",
+    "regionId": null,
+    "centroid": [
+      0.00037,
+      0.23173,
+      -0.73445
+    ]
+  }
+]

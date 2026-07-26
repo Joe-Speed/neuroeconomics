@@ -12,85 +12,337 @@ export type RegionId =
   | "Insula"
   | "Amygdala";
 
+export interface RegionPaperRef {
+  /** Key into PAPERS in lib/papers.ts. */
+  paperId: string;
+  /** Why this paper matters for this specific region — the same paper often has a different angle per region. */
+  relevance: string;
+}
+
 export interface Region {
   id: RegionId;
   name: string;
   role: string;
   /** Approximate MNI152 peak coordinate [x, y, z] in mm, for visualization only — not a registered atlas lookup. */
   mniCoords: readonly [number, number, number];
+  papers: readonly RegionPaperRef[];
 }
 
 export const REGIONS: readonly Region[] = [
   {
     id: "vmPFC",
     name: "Ventromedial Prefrontal Cortex",
-    role: "Integrates sensory, affective, and goal-related attributes into a single subjective-value signal used to compare options across choice domains.",
+    role: 'The core "common currency" hub and arguably the most important area in neuroeconomics. The vmPFC integrates sensory, affective, and goal-related attributes into a single subjective value signal used for choice comparison. It flexibly incorporates attention and goals (e.g. "health" vs "taste") and is recruited across domains including consumption, intertemporal choice, and prosocial decisions. It also has roles in social behaviour, integrating social attributes (fairness, harm to others, cooperative context) into a common-currency signal, while weighing the costs of enforcing norms when punishment is costly.',
     mniCoords: [0, 45, -8],
+    papers: [
+      {
+        paperId: "plassmann2007",
+        relevance:
+          "fMRI auction for foods: trial-by-trial vmPFC/OFC activity scaled with bids (WTP), establishing a continuous neural code for decision value.",
+      },
+      {
+        paperId: "hare2011",
+        relevance:
+          'Instructed attention shifts made vmPFC incorporate "health" more; shows goal-dependent reweighting of attributes within vmPFC\'s value code.',
+      },
+      {
+        paperId: "plassmann2008",
+        relevance:
+          "Price cues made the same wine taste better and boosted mOFC/vmPFC responses — beliefs/expectations directly alter experienced utility signals.",
+      },
+      {
+        paperId: "kable2007",
+        relevance:
+          "vmPFC and ventral striatum encoded discounted value for delayed money, linking classical utility models with neural valuation mechanisms.",
+      },
+      {
+        paperId: "hare2009",
+        relevance:
+          "Self-controllers recruited lateral PFC to bias vmPFC toward long-term goals (health), revealing top-down control over value construction.",
+      },
+      {
+        paperId: "dequervain2004",
+        relevance:
+          "vmPFC/mOFC were more active when subjects had a strong desire to sanction but punishment was costly, consistent with integrating moral benefits and economic costs.",
+      },
+      {
+        paperId: "rilling2002",
+        relevance:
+          "vmPFC/OFC co-activated with striatum during mutual cooperation, supporting a common-currency representation that includes social value.",
+      },
+    ],
   },
   {
     id: "OFC",
     name: "Orbitofrontal Cortex",
-    role: "Computes experienced utility at consumption; lateral OFC tracks risk and ambiguity, medial OFC tracks pleasantness and social reward.",
+    role: "Computes experienced utility at consumption and integrates beliefs/expectations into value. Lateral OFC is recruited by risk/volatility; medial OFC tracks pleasantness and social reward. OFC also contributes to valuation under ambiguity and to cost-benefit integration when punishing norm violations.",
     mniCoords: [0, 40, -20],
+    papers: [
+      {
+        paperId: "plassmann2008",
+        relevance:
+          "Price cues made identical wines taste better and selectively increased mOFC responses to consumption, demonstrating belief-dependent shifts in experienced utility signals.",
+      },
+      {
+        paperId: "preuschoff2008",
+        relevance:
+          "While ventral striatum coded expected reward, risk-related signals appeared in insula and lateral OFC during a card task, linking OFC to variance-sensitive valuation.",
+      },
+      {
+        paperId: "hsu2005",
+        relevance:
+          "Ambiguity (unknown probabilities) engaged anterior insula and OFC more than risk; ties OFC to evaluating options when probabilities are imprecise.",
+      },
+      {
+        paperId: "rilling2002",
+        relevance:
+          "Mutual cooperation with a human partner activated vmPFC/OFC together with striatum, indicating OFC participation in social reward valuation.",
+      },
+    ],
   },
   {
     id: "DLPFC",
     name: "Dorsolateral Prefrontal Cortex",
-    role: "Implements top-down control, biasing valuation systems like vmPFC and striatum toward long-term or rule-based goals.",
+    role: "Implements top-down control and goal maintenance, biasing valuation systems (e.g. vmPFC/striatum) toward long-term or rule-based objectives; supports norm compliance and self-control.",
     mniCoords: [44, 30, 24],
+    papers: [
+      {
+        paperId: "mcclure2004",
+        relevance:
+          'Identified a "δ (delta) system" including lateral PFC that favoured patient choices over immediate gratification, aligning with controlled, planful valuation. Together with the beta coefficient, the paper suggests a dual-process model for choice valuation and decision-making.',
+      },
+      {
+        paperId: "hare2009",
+        relevance:
+          "Dieters showing self-control engaged lateral PFC more and biased vmPFC to weight health attributes — demonstrating top-down control over valuation.",
+      },
+      {
+        paperId: "knoch2008",
+        relevance:
+          "Modulating lateral PFC with tDCS altered acceptance of unfair offers, implying a causal role for DLPFC in norm enforcement/cognitive control.",
+      },
+    ],
   },
   {
     id: "TPJ",
     name: "Temporoparietal Junction",
-    role: "Supports theory-of-mind — representing others' beliefs and intentions — underpinning belief-based and fairness-sensitive valuation.",
+    role: "Social inference / theory-of-mind node used to represent others' beliefs, intentions, and responsibility. In neuroeconomics, TPJ supports belief-based valuation and strategic reasoning (fairness expectations, trust).",
     mniCoords: [55, -55, 25],
+    papers: [
+      {
+        paperId: "saxe2006",
+        relevance:
+          "Identified right TPJ selectivity for belief reasoning, providing the substrate for belief-dependent value adjustments in social decision tasks.",
+      },
+      {
+        paperId: "rillingSanfey2011",
+        relevance:
+          "Review highlighting TPJ within a social decision network (TPJ/STS/mPFC) used in trust, fairness, and cooperation tasks.",
+      },
+    ],
   },
   {
     id: "SMA",
     name: "Pre-SMA / Supplementary Motor Complex",
-    role: "Governs when and whether to commit to an action policy: adjusting decision thresholds and switching from habitual to controlled behaviour.",
+    role: "In value-based choice, the pre-SMA doesn't compute how good options are; it helps decide when and whether to commit to an action policy. Two control roles matter for neuroeconomics: (1) adjusting the decision threshold under time pressure (speed–accuracy trade-off), and (2) switching from a default/automatic policy to a controlled alternative when context or incentives change. Through cortico-basal ganglia loops (pre-SMA ↔ striatum/STN), this shapes response caution, strategy switches, and the mapping from values to actions.",
     mniCoords: [0, 5, 55],
+    papers: [
+      {
+        paperId: "forstmann2008",
+        relevance:
+          "Manipulating urgency in a perceptual decision task lowered decision thresholds (model-based) and increased activity in pre-SMA and striatum, linking this circuit to the speed–accuracy trade-off that governs how quickly values are turned into actions.",
+      },
+      {
+        paperId: "isoda2007",
+        relevance:
+          "Single-unit recordings plus causal stimulation show pre-SMA neurons ramp for successful policy switches, suppressing habitual responses and enabling slower, correct alternatives — the kind of control needed when incentives or task rules change.",
+      },
+    ],
   },
   {
     id: "VTA",
     name: "Ventral Tegmental Area",
-    role: "Midbrain dopamine source broadcasting a reward-prediction-error teaching signal to striatum and prefrontal cortex.",
+    role: "Midbrain dopaminergic hub projecting to ventral striatum and vmPFC/OFC. In neuroeconomics, VTA dopamine neurons provide a reward prediction error (RPE) teaching signal: brief bursts for better-than-expected outcomes and pauses for worse-than-expected ones. This RPE calibrates learned values and selection in cortico-striatal circuits, shaping preference learning, choice under uncertainty, and motivation.",
     mniCoords: [0, -16, -12],
+    papers: [
+      {
+        paperId: "schultz1997",
+        relevance:
+          "Primate electrophysiology showed midbrain dopamine (incl. VTA/SNc) shifts phasic firing from reward delivery to its predictive cue, with bursts for outcomes better than expected and dips for worse — canonical evidence that dopamine implements a temporal-difference-like RPE, the core learning signal used in neuroeconomic models.",
+      },
+      {
+        paperId: "dardenne2008",
+        relevance:
+          "High-resolution human fMRI targeting the brainstem showed VTA BOLD tracks positive RPEs and scales with reward probability, while ventral striatum encodes signed RPEs — direct human evidence that VTA carries the dopaminergic teaching signal used to update values during choice.",
+      },
+    ],
   },
   {
     id: "ACC",
     name: "Anterior Cingulate Cortex",
-    role: "Monitors conflict and salience, co-activating with insula during unfairness or the cost of self-control.",
+    role: "Salience/conflict monitor that tracks norm conflict and affective arousal. In value-based and social choices, ACC co-activates with anterior insula (AI) for unfairness/empathy and contributes to evaluating the costs of controlling and regulating actions to guide behaviour.",
     mniCoords: [0, 30, 20],
+    papers: [
+      {
+        paperId: "sanfey2003",
+        relevance:
+          "ACC (with bilateral AI) responded to unfair human offers, consistent with conflict between monetary gain and fairness motives.",
+      },
+      {
+        paperId: "singer2004",
+        relevance:
+          "Conjunction analysis showed overlapping ACC activation when feeling pain and seeing a partner in pain, indexing affective salience that can bias prosocial valuation.",
+      },
+    ],
   },
   {
     id: "PCC",
     name: "Posterior Cingulate Cortex",
-    role: "Default-mode / valuation hub linked to context-dependent value and present-biased discounting.",
+    role: "Default-mode / valuation hub implicated in internal mentation and context-dependent value. In intertemporal choice, PCC appears with limbic regions that prioritise immediacy, aligning with present-biased valuation.",
     mniCoords: [0, -50, 30],
+    papers: [
+      {
+        paperId: "mcclure2004",
+        relevance:
+          'Identified a limbic "β (beta) system" that included PCC alongside vmPFC and ventral striatum for immediate rewards — relevant to present bias in discounting.',
+      },
+    ],
   },
   {
     id: "NAcc",
     name: "Nucleus Accumbens (Ventral Striatum)",
-    role: "Converts anticipated reward and incentive cues into motivation and approach behaviour.",
+    role: "Limbic–striatal hub that converts expected rewards and incentive cues into motivation and action. In neuroeconomics, NAcc activity scales with anticipated monetary gains and positive prediction errors, biases accept/reject choices in risky gambles, and reflects the appetitive side of valuation that competes with aversive/uncertainty signals from regions like the insula.",
     mniCoords: [10, 10, -8],
+    papers: [
+      {
+        paperId: "knutson2001",
+        relevance:
+          "Event-related fMRI with graded incentives: anticipatory NAcc activity increased with expected monetary reward and preceded action, establishing NAcc as a key substrate for translating anticipated value into approach behaviour.",
+      },
+      {
+        paperId: "tom2007",
+        relevance:
+          "In mixed gambles, NAcc activity scaled with potential gains (approach), while anterior insula scaled with potential losses (avoidance); behavioural loss aversion tracked differential slopes, tying NAcc gain sensitivity to risk-taking propensity.",
+      },
+    ],
   },
   {
     id: "Caudate",
     name: "Caudate Nucleus (Dorsal Striatum)",
-    role: "Computes and updates action-specific values that bias which action is selected.",
+    role: "Part of the dorsal striatum central to goal-directed (action–outcome) control. The caudate integrates cortical inputs, including lateral PFC, to compute and update action-specific values, biasing which action is selected in basal ganglia loops. In neuroeconomic tasks, single-unit and fMRI work show the caudate carries signals for action value, chosen value, and the learning/prediction required for flexible, cost-benefit decisions.",
     mniCoords: [14, 12, 10],
+    papers: [
+      {
+        paperId: "samejima2005",
+        relevance:
+          'Single-unit recordings in primate dorsal striatum (including caudate) during a two-action choice task showed a large fraction of projection neurons encoded the values of specific actions during the decision period. These action-value signals predicted subsequent choice, providing direct neural evidence for an "actor" representation that guides selection among actions in economic choice.',
+      },
+      {
+        paperId: "lau2008",
+        relevance:
+          "Recording caudate neurons while monkeys followed a reward-matching strategy, the study found distinct populations encoding action values and chosen values around the time of choice. Dynamics tracked learning-consistent adjustments in value, positioning the caudate as a key substrate for computing and updating the values that drive action selection.",
+      },
+    ],
   },
   {
     id: "Insula",
     name: "Anterior Insula",
-    role: "Encodes risk, ambiguity, and norm-violation affect; anticipates aversive outcomes.",
+    role: "Encodes risk/volatility and norm-violation-related affect; anticipates aversive outcomes and ambiguity. In social contexts, the anterior insula tracks empathic affect and unfairness, biasing choices toward norm enforcement or avoidance.",
     mniCoords: [38, 18, 2],
+    papers: [
+      {
+        paperId: "preuschoff2008",
+        relevance:
+          "Insula showed a quadratic relation to probability during anticipation and signalled risk prediction errors, marking volatility-sensitive computation separate from expected value.",
+      },
+      {
+        paperId: "sanfey2003",
+        relevance:
+          "Anterior insula responses were stronger for unfair (human) offers and predicted rejections — linking AI to norm-violation aversion in choice.",
+      },
+      {
+        paperId: "singer2004",
+        relevance:
+          "Observing a loved one in pain activated AI (and ACC), indicating the insula's role in affect sharing that can shape prosocial choices.",
+      },
+      {
+        paperId: "hsu2005",
+        relevance:
+          "Ambiguity elicited greater AI engagement than risk, consistent with the insula tracking uncertainty aversion that modulates valuation.",
+      },
+    ],
   },
   {
     id: "Amygdala",
     name: "Amygdala",
-    role: "Tracks aversive value, salience, and threat-related learning that bias choice under loss and risk.",
+    role: "Tracks aversive value, salience, and learning signals that shape choice under loss, risk, and social threat. Contributes to ambiguity aversion and to negative affect that can bias economic decisions.",
     mniCoords: [22, -4, -18],
+    papers: [
+      {
+        paperId: "basten2010",
+        relevance:
+          "Loss magnitude was encoded in the amygdala, reward magnitude in NAcc, and the cost-benefit difference in vmPFC — tying the amygdala to aversive components of value.",
+      },
+      {
+        paperId: "hsu2005",
+        relevance:
+          "Ambiguity (vs risk) increased amygdala responses alongside AI/OFC, indicating a role in uncertainty aversion that feeds into valuation — evidence that we are inherently more inclined to avoid and dislike uncertainty in decisions.",
+      },
+      {
+        paperId: "olsson2007",
+        relevance:
+          "Demonstrated amygdala involvement in socially acquired aversive values — mechanisms that can shape trust, risk, and norm-sensitive choices.",
+      },
+    ],
   },
 ];
+
+export function getRegionById(regionId: RegionId | null): Region | undefined {
+  return REGIONS.find((region) => region.id === regionId);
+}
+
+export const NEUROECONOMICS_INTRO =
+  "Neuroeconomics is an interdisciplinary field that combines neuroscience, psychology, and economics to study decision-making. It explores brain regions involved in value computation, reward processing, and choice behaviour. Key areas include the vmPFC (valuation), dlPFC (cognitive control), and striatum (reward learning). Understanding the field helps explain irrational behaviour, biases, and preferences.";
+
+export interface RecommendedRead {
+  title: string;
+  author: string;
+  year: number;
+  category: "book" | "academic";
+  /** Publisher, DOI resolver, or other stable catalog page — null until verified. */
+  url: string | null;
+}
+
+export const RECOMMENDED_READS: readonly RecommendedRead[] = [
+  {
+    title: "Decisions, Uncertainty, and the Brain",
+    author: "Glimcher",
+    year: 2004,
+    category: "book",
+    url: "https://mitpress.mit.edu/9780262572279/decisions-uncertainty-and-the-brain/",
+  },
+  {
+    title: "Neuroeconomics: A Guide to the New Science of Decision Making",
+    author: "Politser",
+    year: 2008,
+    category: "book",
+    url: "https://global.oup.com/academic/product/neuroeconomics-9780195305821",
+  },
+  {
+    // Actually a review article (Annual Review of Neuroscience, 30, 535–574), not a book.
+    title: "The Neural Basis of Decision Making",
+    author: "Gold & Shadlen",
+    year: 2007,
+    category: "academic",
+    url: "https://doi.org/10.1146/annurev.neuro.29.051605.113038",
+  },
+  {
+    title: "Neuroeconomics: Decision Making and the Brain",
+    author: "Glimcher & Fehr",
+    year: 2014,
+    category: "academic",
+    url: "https://www.sciencedirect.com/book/9780124160088/neuroeconomics",
+  },
+];
+
+export const SOCIETY_FOR_NEUROECONOMICS_URL = "https://neuroeconomics.org/";
