@@ -1,4 +1,4 @@
-import { NEUROECONOMICS_INTRO, RECOMMENDED_READS, SOCIETY_FOR_NEUROECONOMICS_URL } from "../lib/regions";
+import { JNPE_JOURNAL_URL, NEUROECONOMICS_INTRO, RECOMMENDED_READS, SOCIETY_FOR_NEUROECONOMICS_URL } from "../lib/regions";
 
 export function AboutPanel() {
   const books = RECOMMENDED_READS.filter((read) => read.category === "book");
@@ -53,6 +53,11 @@ export function AboutPanel() {
         <li>
           <a href={SOCIETY_FOR_NEUROECONOMICS_URL} target="_blank" rel="noopener noreferrer">
             Society for Neuroeconomics ↗
+          </a>
+        </li>
+        <li>
+          <a href={JNPE_JOURNAL_URL} target="_blank" rel="noopener noreferrer">
+            Journal of Neuroscience, Psychology, and Economics ↗
           </a>
         </li>
       </ul>

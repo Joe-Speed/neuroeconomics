@@ -418,3 +418,4 @@ export const RECOMMENDED_READS: readonly RecommendedRead[] = [
 ];
 
 export const SOCIETY_FOR_NEUROECONOMICS_URL = "https://neuroeconomics.org/";
+export const JNPE_JOURNAL_URL = "https://www.apa.org/pubs/journals/npe";
