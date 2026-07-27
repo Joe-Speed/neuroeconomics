@@ -466,3 +466,53 @@ a {
   color: #f3f2ee;
   pointer-events: none;
 }
+
+/* Stacked layout: brain on top at full, uncropped height; sidebar content
+   flows below it and scrolls with the page instead of in its own pane. */
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    height: auto;
+    min-height: 100%;
+  }
+
+  .app-shell {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .app-layout {
+    flex-direction: column;
+    flex: none;
+    min-height: 0;
+  }
+
+  .brain-scene {
+    flex: none;
+    height: 65vh;
+  }
+
+  .region-panel {
+    width: 100%;
+    overflow-y: visible;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .region-panel-body {
+    padding-bottom: 4.5rem;
+  }
+
+  .region-panel-toggle {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 999px;
+    padding: 0.6rem 0.9rem;
+    z-index: 10;
+  }
+}
