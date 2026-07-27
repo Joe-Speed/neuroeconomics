@@ -83,11 +83,7 @@ Still open:
 
 - Globus pallidus is already a separate piece in the mesh but not yet
   mapped to a region — a "basal ganglia loop" region would be free to add.
-- A circuit view: selecting a region could also glow the other regions
-  the cited papers describe it as functionally connected to (e.g. the
-  VTA → NAcc → vmPFC reward pathway).
-- A guided "tour" mode that auto-cycles through every region.
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) — if you reuse this code, please credit Joe Speed.

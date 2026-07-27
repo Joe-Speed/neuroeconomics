@@ -380,7 +380,7 @@ interface RecommendedRead {
   title: string;
   author: string;
   year: number;
-  category: "book" | "academic";
+  category: "book" | "textbook" | "academic";
   /** Publisher, DOI resolver, or other stable catalogue page — null until verified. */
   url: string | null;
 }
@@ -412,8 +412,15 @@ export const RECOMMENDED_READS: readonly RecommendedRead[] = [
     title: "Neuroeconomics: Decision Making and the Brain",
     author: "Glimcher & Fehr",
     year: 2014,
-    category: "academic",
+    category: "textbook",
     url: "https://www.sciencedirect.com/book/9780124160088/neuroeconomics",
+  },
+  {
+    title: "Neuroeconomics: The Consilience of Brain and Decision",
+    author: "Glimcher & Rustichini",
+    year: 2004,
+    category: "academic",
+    url: "https://doi.org/10.1126/science.1102566",
   },
 ];
 

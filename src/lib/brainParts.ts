@@ -1,5 +1,6 @@
 import rawParts from "./brainParts.generated.json";
-import type { RegionId } from "./regions";
+import { approximateRegionPosition } from "./regionCoordinates";
+import { getRegionById, type RegionId } from "./regions";
 
 interface BrainPart {
   nodeName: string;
@@ -92,4 +93,18 @@ export function regionCentroid(regionId: RegionId): readonly [number, number, nu
 
   const sum = centroids.reduce((acc, [x, y, z]) => [acc[0] + x, acc[1] + y, acc[2] + z], [0, 0, 0]);
   return [sum[0] / centroids.length, sum[1] / centroids.length, sum[2] / centroids.length];
+}
+
+/**
+ * A region's position in scene space, for anything that needs a single point
+ * (camera targeting, circuit-line endpoints) rather than a highlightable
+ * mesh. Falls back to the region's approximate published MNI location for
+ * vmPFC/OFC, which have no mapped mesh piece at all.
+ */
+export function regionPosition(regionId: RegionId): readonly [number, number, number] {
+  const centroid = regionCentroid(regionId);
+  if (centroid) return centroid;
+
+  const region = getRegionById(regionId);
+  return region ? approximateRegionPosition(region.mniCoords) : [0, 0, 0];
 }

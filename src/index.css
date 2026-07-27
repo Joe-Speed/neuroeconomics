@@ -243,11 +243,17 @@ a {
   touch-action: none;
 }
 
-.explode-toggle {
+.scene-controls {
   position: absolute;
   top: 1rem;
   left: 1rem;
   z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.scene-control-button {
   background: color-mix(in srgb, var(--surface) 80%, transparent);
   color: var(--fg);
   border: 1px solid var(--border);
@@ -258,7 +264,7 @@ a {
   backdrop-filter: blur(6px);
 }
 
-.explode-toggle:hover {
+.scene-control-button:hover {
   border-color: var(--fg-muted);
 }
 

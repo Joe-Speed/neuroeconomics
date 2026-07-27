@@ -20,6 +20,7 @@ const HIGHLIGHT_COLOR = new Color(GLOW_COLOR);
 const HIGHLIGHT_EMISSIVE_INTENSITY = 0.85;
 const HOVER_EMISSIVE_INTENSITY = 0.3;
 const GHOST_OPACITY = 0.12;
+const REVEAL_DURATION_SECONDS = 1.1; // fades the whole brain in once on load
 
 interface BrainMeshProps {
   selectedRegionId: RegionId | null;
@@ -99,16 +100,23 @@ export function BrainMesh({ selectedRegionId, onSelectRegion, explodeProgressRef
     hoveredNodeNames: Set<string> | null;
   }>({ progress: null, selectedNodeNames: null, hoveredNodeNames: null });
 
-  useFrame(() => {
+  const revealElapsedRef = useRef(0);
+
+  useFrame((_, delta) => {
+    const revealIsDone = revealElapsedRef.current >= REVEAL_DURATION_SECONDS;
+    if (!revealIsDone) revealElapsedRef.current += delta;
+    const revealProgress = Math.min(revealElapsedRef.current / REVEAL_DURATION_SECONDS, 1);
+
     const progress = explodeProgressRef.current;
     const lastFrameState = lastFrameStateRef.current;
     // Sets are only ever replaced (never mutated) when selection/hover
     // changes, so reference equality is a correct, cheap "did it change?"
     // check. Repositioning and recoloring 76 pieces is wasted work on every
     // frame nothing actually changed — which is most frames, since this
-    // only needs to happen when explode is mid-animation or right after a
-    // click/hover.
+    // only needs to happen when explode is mid-animation, right after a
+    // click/hover, or during the initial fade-in.
     if (
+      revealProgress >= 1 &&
       progress === lastFrameState.progress &&
       selectedNodeNames === lastFrameState.selectedNodeNames &&
       hoveredNodeNames === lastFrameState.hoveredNodeNames
@@ -143,7 +151,7 @@ export function BrainMesh({ selectedRegionId, onSelectRegion, explodeProgressRef
       }
 
       const shouldGhost = hasSelection && !isExploded && !isSelected && !isHovered;
-      const opacity = shouldGhost ? GHOST_OPACITY : 1;
+      const opacity = (shouldGhost ? GHOST_OPACITY : 1) * revealProgress;
       material.opacity = opacity;
 
       const outline = outlinesByNodeRef.current.get(part.nodeName);

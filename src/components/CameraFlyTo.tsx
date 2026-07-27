@@ -2,9 +2,8 @@ import { useEffect, useMemo, useRef, type RefObject } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Vector3 } from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
-import { regionCentroid } from "../lib/brainParts";
-import { approximateRegionPosition } from "../lib/regionCoordinates";
-import { getRegionById, type RegionId } from "../lib/regions";
+import { regionPosition } from "../lib/brainParts";
+import type { RegionId } from "../lib/regions";
 
 const DEFAULT_CAMERA_POSITION = new Vector3(0, 4, 4.5);
 const DEFAULT_TARGET = new Vector3(0, 0, 0);
@@ -31,14 +30,7 @@ interface CameraFlyToProps {
 
 function focusTarget(regionId: RegionId | null): Vector3 {
   if (!regionId) return DEFAULT_TARGET.clone();
-
-  const centroid = regionCentroid(regionId);
-  if (centroid) return new Vector3(...centroid);
-
-  // No mapped mesh piece (vmPFC, OFC) — still guide the camera toward the
-  // region's approximate published location, even with nothing to highlight.
-  const region = getRegionById(regionId);
-  return region ? new Vector3(...approximateRegionPosition(region.mniCoords)) : DEFAULT_TARGET.clone();
+  return new Vector3(...regionPosition(regionId));
 }
 
 export function CameraFlyTo({ selectedRegionId, controlsRef }: CameraFlyToProps) {
