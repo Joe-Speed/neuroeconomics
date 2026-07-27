@@ -59,20 +59,6 @@ export function AboutPanel() {
           </a>
         </li>
       </ul>
-
-      <h3>Associated sites</h3>
-      <ul className="resource-links">
-        <li>
-          <a href="https://www.behaviouralatlas.com/" target="_blank" rel="noopener noreferrer">
-            Behavioural Atlas ↗
-          </a>
-        </li>
-        <li>
-          <a href="https://www.behaviouralengines.com/" target="_blank" rel="noopener noreferrer">
-            Behavioural Engines ↗
-          </a>
-        </li>
-      </ul>
     </div>
   );
 }
