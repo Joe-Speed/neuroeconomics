@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joe-speed.github.io/neuroeconomics/sitemap.xml
